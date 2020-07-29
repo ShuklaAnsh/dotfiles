@@ -112,16 +112,16 @@ source $ZSH/oh-my-zsh.sh
 #alias rider=rider.sh
 # intelli j
 export PATH=$PATH:$HOME/Applications/idea/bin
-alias idea=idea.sh
+alias idea='nohup idea.sh &'
 # java
-export PATH=$PATH:$HOME/.jdks/'adopt-openjdk-11.0.7'/bin
-export JAVA_HOME=$HOME/.jdks/'adopt-openjdk-11.0.7'
+export PATH=$PATH:$HOME/.jdks/'adopt-openjdk-11.0.8'/bin
+export JAVA_HOME=$HOME/.jdks/'adopt-openjdk-11.0.8'
 # CLion
 export PATH=$PATH:$HOME/Applications/clion/bin
-alias clion=clion.sh
+alias clion='nohup clion.sh &'
 # Pycharm
 export PATH=$PATH:$HOME/Applications/pycharm/bin
-alias pycharm=pycharm.sh
+alias pycharm='nohup pycharm.sh &'
 # Python .local bin
 export PATH=$PATH:$HOME/.local/bin
 alias py=python3
