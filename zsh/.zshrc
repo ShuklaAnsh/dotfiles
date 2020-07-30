@@ -126,3 +126,5 @@ alias pycharm='nohup pycharm.sh &'
 export PATH=$PATH:$HOME/.local/bin
 alias py=python3
 alias pip=pip3
+
+alias ip="ip -c a"
