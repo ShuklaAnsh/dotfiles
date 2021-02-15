@@ -1,11 +1,11 @@
 [colours]
-background          =   ${xrdb:color0:#222}
+background          =   ${xrdb:color0:#222222}
 foreground          =   ${xrdb:color7:#fff}
 foreground-alt      =   ${xrdb:color7:#a3a3a3}
 primary             =   ${xrdb:color1:#333}
 secondary           =   ${xrdb:color2:#1c8cfd}
 alert               =   ${xrdb:color3:#fd8d1c}
-
+success             =   #c1ffc1
 
 [fonts]
 default             =   fixed:pixelsize=10;1
@@ -15,11 +15,10 @@ awesome             =   FontAwesome:style=Regular:size=10:antialias=true
 
 
 [vars]
-height              =   25
-border-size         =   0
+height              =   30
+border-size         =   5
 border-colour       =   ${colours.background}
-padding-left        =   1
-padding-right       =   2
+padding             =   1
 module-margin-left  =   1
 module-margin-right =   2
 
@@ -31,19 +30,19 @@ foreground          =   ${colours.foreground}
 ; config
 width               =   100%
 height              =   ${vars.height}
-top-padding         =   5
 fixed-center        =   true
 bottom              =   false
 override-redirect   =   false
-;wm-restack          =   i3
+#wm-restack          =   i3
 ;enable-ipc          =   true
 ; border
-border-size         =   7
-border-bottom-size  =   1
+border-size         =   ${vars.border-size}
+border-bottom-size  =   0
 ; radius
-; radius            =   10%
+# radius              =   15%
 ; padding
 padding             =   5
+padding-right       =   5
 ;line
 line-size           =   5
 ; fonts
@@ -54,7 +53,7 @@ module-margin-left  =   ${vars.module-margin-left}
 module-margin-right =   ${vars.module-margin-right}
 modules-left        =   i3 xwindow
 modules-center      =   date
-modules-right       =   powermenu
+modules-right       =   net_test powermenu
 
 
 [module/xwindow]
@@ -119,20 +118,33 @@ label-visible-padding       =   ${self.label-focused-padding}
 type                =   internal/date
 date                =   "%b %d%"
 time                =   "%l:%M %p"
-label               =   %date% |%time%
+label               =   %date% | %time%
 
 
 [module/powermenu]
 type                =   custom/menu
-menu-0-0            =   Shutdown
-menu-0-0-exec       =   poweroff
-menu-0-1            =   Suspend
-menu-0-1-exec       =   systemctl suspend
+menu-0-0            =   Logout
+menu-0-0-exec       =   i3-msg exit
+menu-0-1            =   Shutdown
+menu-0-1-exec       =   poweroff
+menu-0-2            =   Restart
+menu-0-2-exec       =   /sbin/shutdown -r now 
+menu-0-3            =   Suspend
+menu-0-3-exec       =   systemctl suspend
 label-open          =   
 label-close         =   
 label-separator     =   " | "
+format-padding = 4
 
 
-[module/test]
+[module/net_test]
 type                =   custom/script
-exec                =   echo  Hello Ansh
+exec-if             =   hash speedtest
+exec                =   echo AHHHHHHHHHHHHHHHHHHHHHHH
+; exec                =   exec ~/.config/polybar/scripts/net_test &
+tail                =   true
+interval            =   30
+format-background = #999
+format-foreground = #000
+format-padding = 4
+label = %output:0:15:...%
