@@ -1,0 +1,59 @@
+#import:
+  #- ~/.config/alacritty/themes/rose-pine/rose-pine-moon.yml
+  #- ~/.config/alacritty/themes/catppuccin/catppuccin.yml
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
+keybindings:
+  #- { key: [A-Z],        mods: Alt,     chars: "\x1b[a-z]"
+  - { key: B,        mods: Alt,     chars: "\x1bb"                       }
+  - { key: Up,       mods: Alt,     chars: "\x1b[1;5A"                   }
+  - { key: Down,     mods: Alt,     chars: "\x1b[1;5B"                   }
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                       }
+  - { key: Right,    mods: Alt,     chars: "\x1bf"                       }
+  - { key: Key0,     mods: Alt,     chars: "º"                           }
+  - { key: Key1,     mods: Alt,     chars: "¡"                           }
+  - { key: Key2,     mods: Alt,     chars: "€"                           }
+  - { key: Key3,     mods: Alt,     chars: "#"                           }
+  - { key: Key4,     mods: Alt,     chars: "¢"                           }
+  - { key: Key5,     mods: Alt,     chars: "∞"                           }
+  - { key: Key6,     mods: Alt,     chars: "§"                           }
+  - { key: Key7,     mods: Alt,     chars: "¶"                           }
+  - { key: Key8,     mods: Alt,     chars: "•"                           }
+  - { key: Key9,     mods: Alt,     chars: "ª"                           }
+
+window:
+  decorations: buttonless
+  title: "Terminal"
+  # dynamic_title: true
+  dynamic_padding: true
+  padding:
+    x: 10
+    y: 10
+
+background_opacity: 0.85
+
+# Font configuration (changes require restart)
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold: 
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic: 
+    family: JetBrainsMono Nerd Font
+    style: Italic
+
+  size: 12.0
+
+  use_thin_strokes: true
+
+# When true, bold text is drawn using the bright variant of colors.
+draw_bold_text_with_bright_colors: true
+
